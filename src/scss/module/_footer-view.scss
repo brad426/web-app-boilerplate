@@ -1,0 +1,12 @@
+footer {
+	/* Sticky footer styles
+	-------------------------------------------------- */
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: $sticky-footer-height;
+	/* End Sticky footer styles
+	-------------------------------------------------- */
+	padding: 40px 0;
+	background-color: $gray-lighter;
+}

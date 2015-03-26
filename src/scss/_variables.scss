@@ -1,0 +1,71 @@
+/*
+ * Variables marked '@override' will override the bootstrap defaults
+ */
+
+//== Colors
+//
+//## Global color settings.
+$brand-primary:             #ff00ff;  // @override
+$brand-secondary:           #88bbde;
+$gray-darker:            lighten(#000, 13.5%); // #222 @override
+$gray-dark:              lighten(#000, 20%);   // #333 @override
+$gray:                   lighten(#000, 33.5%); // #555 @override
+$gray-light:             lighten(#000, 40%);   // #666 @override
+$gray-lighter:           lighten(#000, 93.5%); // #eee @override
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif:    Arial, sans-serif; // @override
+$text-color:                $gray;  // @override
+$text-inverted-color:       white;
+
+$headings-font-family:      "bmw-type-pro-light", Arial; // @override
+$headings-font-weight:      300; // @override
+$headings-color:            $brand-secondary; // @override
+
+$font-size-base:          16px; // @override
+$font-size-large:         20px; // @override
+$font-size-small:         12px; // @override
+
+
+//== Buttons
+//
+//## Styles global to buttons.
+$btn-default-color:         white; // @override
+$btn-default-bg:            $text-color; // @override
+$btn-font-weight:           100; // @override
+
+
+//== Components
+//
+$sticky-footer-height: 100px;
+
+$border-radius-base:        0; //override
+$border-radius-large:       0; //override
+$border-radius-small:       0; //override
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+$grid-gutter-width:         40px;  // @override
+$container-tablet:          ((680px + $grid-gutter-width)); // @override (should be <= 768 if using standard breakpoints)
+$container-desktop:         ((900px + $grid-gutter-width)); // @override (should be <= 992 if using standard breakpoints)
+$container-large-desktop:   ((1100px + $grid-gutter-width)); // @override (should be <= 1200 if using standard breakpoints)
+
+/*
+ * Define custom breakpoints
+ */
+/*
+$screen-xs:                  480px !default;
+$screen-sm:                  768px !default;
+$screen-md:                  992px !default;
+$screen-lg:                  1200px !default;
+*/
+
+
+//== Iconography
+//
+//## Specify custom location and filename of the icon fonts
+$icon-font-path:            "../font/icon-font/font/";
+$icon-font-file-name:       "fontello";
