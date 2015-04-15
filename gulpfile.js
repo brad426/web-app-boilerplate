@@ -126,15 +126,19 @@ gulp.task('set-app-mode', function() {
 
 gulp.task('copy', function () {
 
-  return gulp.src([
-      sources.root,
-      '!src/{js,js/**}',
-      '!src/{scss,scss/**}',
-      '!src/{partial,partial/**}',
-      '!src/{json,json/**}'
-    ])
-    .pipe(gulp.dest(outputDir))
-    .pipe(size({title: 'copy'}));
+	// Make sure modernizr and respondJS are copied to the output directory
+	gulp.src('src/js/vendor/modernizr-respond-js.js')
+		.pipe(gulp.dest(outputDir + 'js/vendor/'));
+
+	return gulp.src([
+		sources.root,
+		'!src/{js,js/**}',
+		'!src/{scss,scss/**}',
+		'!src/{partial,partial/**}',
+		'!src/{json,json/**}'
+	])
+	.pipe(gulp.dest(outputDir))
+	.pipe(size({title: 'copy'}));
 });
 
 gulp.task('images', function() {
