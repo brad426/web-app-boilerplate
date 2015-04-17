@@ -14,9 +14,3 @@ To build the project, first update the version number in `package.json`. and the
 `gulp build`
 
 This will compile and copy all required files into `/dist/`
-
-The build command accepts an optional "mode" argument. This can be used to control how the app behaves at runtime.
-
-*Example*
-`gulp build --mode=prod`
-
