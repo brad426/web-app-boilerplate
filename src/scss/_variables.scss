@@ -48,10 +48,10 @@ $border-radius-small:       0; //override
 //== Grid system
 //
 //## Define your custom responsive grid.
-$grid-gutter-width:         40px;  // @override
-$container-tablet:          ((680px + $grid-gutter-width)); // @override (should be <= 768 if using standard breakpoints)
-$container-desktop:         ((900px + $grid-gutter-width)); // @override (should be <= 992 if using standard breakpoints)
-$container-large-desktop:   ((1100px + $grid-gutter-width)); // @override (should be <= 1200 if using standard breakpoints)
+$grid-gutter-width:     40px;  // @override
+$container-sm:          ((680px + $grid-gutter-width)); // @override (should be <= 768 if using standard breakpoints)
+$container-md:          ((900px + $grid-gutter-width)); // @override (should be <= 992 if using standard breakpoints)
+$container-lg:          ((1100px + $grid-gutter-width)); // @override (should be <= 1200 if using standard breakpoints)
 
 /*
  * Define custom breakpoints
