@@ -13,8 +13,8 @@ gulp.task('styles', function () {
   return gulp.src(config.styles.src)
     .pipe( sass({
       includePaths:['node_modules/bootstrap-sass/assets/stylesheets'],
-      sourceComments: (global.addMode === 'prod') ? 'none' : 'normal',
-      outputStyle: (global.addMode === 'prod') ? 'compressed' : 'nested',
+      sourceComments: (global.appMode === 'prod') ? 'none' : 'normal',
+      outputStyle: (global.appMode === 'prod') ? 'compressed' : 'nested',
       /*errLogToConsole: true*/
     }))
     .pipe( autoprefixer('last 3 versions', '> 1%', 'ie 8') )

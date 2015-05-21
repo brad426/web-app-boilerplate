@@ -9,6 +9,6 @@ gulp.task('set-runtime-app-mode', function() {
 
   // Update app.mode value in compiled JS
   return gulp.src( config.scripts.dest + '/' + config.scripts.bundleName + '-' + p.version + '.min.js' )
-    .pipe(replace(/app.mode\s*=\s*(?:"[^"]+"|'[^']+')/gi, 'app.mode="' + global.addMode + '"'))
+    .pipe(replace(/app.mode\s*=\s*(?:"[^"]+"|'[^']+')/gi, 'app.mode="' + global.appMode + '"'))
     .pipe(gulp.dest(config.scripts.dest));
 });

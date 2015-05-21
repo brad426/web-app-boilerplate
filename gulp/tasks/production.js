@@ -5,7 +5,7 @@ var runSequence = require('run-sequence');
 
 gulp.task('prod', function(cb) {
 
-  global.addMode = 'prod';
+  global.appMode = 'prod';
 
   runSequence('clean', 'sprite-images', 'styles', ['images', 'requirejs', 'copy'], ['replace-references', 'set-runtime-app-mode'], cb);
 

@@ -6,7 +6,7 @@ var runSequence = require('run-sequence');
 
 gulp.task('dev', function(cb) {
 
-  global.addMode = 'dev';
+  global.appMode = 'dev';
 
   runSequence('watch', cb);
 
