@@ -1,11 +1,10 @@
 'use strict';
 
-var config        = require('../config');
 var gulp          = require('gulp');
 
 gulp.task('watch', function() {
 
-  gulp.watch(config.styles.src,  ['styles']);
-  gulp.watch(config.images.sprites.src,  ['sprite-images']);
+  gulp.watch('src/scss/**/*.scss',  ['styles']);
+  gulp.watch('src/img/sprite-src/**/*.png',  ['sprite-images']);
 
 });
