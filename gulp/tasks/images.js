@@ -1,6 +1,5 @@
 'use strict';
 
-var config      = require('../config');
 var gulp        = require('gulp');
 var imagemin    = require('gulp-imagemin');
 var spritesmith = require('gulp.spritesmith');
@@ -9,23 +8,21 @@ var size = require('gulp-size');
 gulp.task('images', function() {
 
   return gulp.src([
-      config.images.src,
-      // Exclude sprite source directory
-      '!' + config.images.sprites.src.replace(global.stipWildcard, '') + '{,/**}'
+      'src/img/**/*',
+      '!src/img/{sprite-src,sprite-src/**}'// Exclude sprite source directory
     ])
     .pipe(imagemin())
-    .pipe(gulp.dest(config.images.dest));
-
+    .pipe(gulp.dest(global.destination + '/img'));
 });
 
 gulp.task('sprite-images', function ( cb ) {
 
-  var spriteData = gulp.src(config.images.sprites.src)
+  var spriteData = gulp.src('src/img/sprite-src/**/*.png')
     .pipe(spritesmith({
-      cssName: config.images.sprites.scssName + '.scss', // the name of the generated .scss file
+      cssName: '_sprite-list.scss', // the name of the generated .scss file
       cssFormat: 'css', // use .scss instead to get sprite generator mixin
-      imgName: config.images.sprites.spriteSheetName + '.png', // the name of the generated sprite-sheet image
-      imgPath: '../' + config.images.dest.replace(config.dist.root + '/', '') + '/' + config.images.sprites.spriteSheetName + '.png', // the path our css will reference
+      imgName: 'sprite.png', // the name of the generated sprite-sheet image
+      imgPath: '../img/sprite.png', // the path our css will reference
       algorithm: 'binary-tree',
       padding: 1, // prevents pixel rounding issues when we use CSS transforms on sprites
       cssOpts: {
@@ -35,15 +32,14 @@ gulp.task('sprite-images', function ( cb ) {
       }
     }));
 
-  // Optimize and output the generated sprite-sheet image
+  // Uutput the generated sprite-sheet image
   spriteData.img
-    .pipe( imagemin() )
-    .pipe( gulp.dest(config.images.sprites.dest) )
+    .pipe( gulp.dest('src/img') )
     .pipe( size({title: 'sprite-images'}) );
 
   // Output the generated .scss file
   spriteData.css
-    .pipe( gulp.dest(config.images.sprites.scssDest) );  
+    .pipe( gulp.dest('src/scss/helper') );  
 
   cb();
 });
