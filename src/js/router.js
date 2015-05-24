@@ -38,7 +38,7 @@ define(function (require) {
         },
 
         notFound: function() {
-           $(this.routeContentEl).html('We couldn\'t find what you were looking for...');
+           $(this.routeContentEl).html('<span class="icon-emo-unhappy"></span> We couldn\'t find what you were looking for...');
         },
 
         cleanup: function() {

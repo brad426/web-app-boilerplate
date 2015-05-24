@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "icon-font",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "hinting": true,
@@ -7,9 +7,21 @@
   "ascent": 850,
   "glyphs": [
     {
+      "uid": "53ed8570225581269cd7eff5795e8bea",
+      "css": "emo-unhappy",
+      "code": 59395,
+      "src": "fontelico"
+    },
+    {
       "uid": "d6944e1d9af302093d43b299bbecbbbe02",
       "css": "home",
       "code": 59392,
+      "src": "iconic"
+    },
+    {
+      "uid": "e2d4382fb8eb0e89e8990f4c44753342",
+      "css": "calendar-inv",
+      "code": 59393,
       "src": "iconic"
     }
   ]
