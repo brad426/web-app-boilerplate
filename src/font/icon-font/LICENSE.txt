@@ -10,12 +10,21 @@ Font license info
    Homepage:  http://somerandomdude.com/work/iconic/
 
 
-## Fontelico
+## Font Awesome
 
-   Copyright (C) 2012 by Fontello project
+   Copyright (C) 2012 by Dave Gandy
 
-   Author:    Crowdsourced, for Fontello project
+   Author:    Dave Gandy
+   License:   SIL ()
+   Homepage:  http://fortawesome.github.com/Font-Awesome/
+
+
+## Entypo
+
+   Copyright (C) 2012 by Daniel Bruce
+
+   Author:    Daniel Bruce
    License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://fontello.com
+   Homepage:  http://www.entypo.com
 
 

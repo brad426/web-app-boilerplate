@@ -7,16 +7,16 @@
   "ascent": 850,
   "glyphs": [
     {
-      "uid": "53ed8570225581269cd7eff5795e8bea",
-      "css": "emo-unhappy",
-      "code": 59395,
-      "src": "fontelico"
+      "uid": "0f6a2573a7b6df911ed199bb63717e27",
+      "css": "github-circled",
+      "code": 59394,
+      "src": "fontawesome"
     },
     {
-      "uid": "d6944e1d9af302093d43b299bbecbbbe02",
+      "uid": "513ac180ff85bd275f2b736720cbbf5e",
       "css": "home",
-      "code": 59392,
-      "src": "iconic"
+      "code": 59395,
+      "src": "entypo"
     },
     {
       "uid": "e2d4382fb8eb0e89e8990f4c44753342",
