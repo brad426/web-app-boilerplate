@@ -1,11 +1,9 @@
 'use strict';
 
-var gulp         = require('gulp');
-var rjs = require('gulp-requirejs');
+var gulp   = require('gulp');
+var rjs    = require('gulp-requirejs');
 var uglify = require('gulp-uglify');
-var size = require('gulp-size');
-var p = require('../../package.json');
-
+var size   = require('gulp-size');
 
 gulp.task('requirejs', function (cb) {
 

@@ -2,7 +2,7 @@
 
 var gulp        = require('gulp');
 var runSequence = require('run-sequence');
-var pkg = require('../../package.json');
+var pkg    		= require('../../package.json');
 
 gulp.task('prod', function(cb) {
 

@@ -4,7 +4,7 @@ var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 var handleErrors = require('../util/handleErrors');
 var autoprefixer = require('gulp-autoprefixer');
-var size = require('gulp-size');
+var size         = require('gulp-size');
 
 
 gulp.task('styles', function () {

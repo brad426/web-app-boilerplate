@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp         = require('gulp');
+var gulp = require('gulp');
 var size = require('gulp-size');
 
 gulp.task('copy', function () {
