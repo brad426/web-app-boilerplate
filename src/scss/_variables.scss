@@ -5,22 +5,34 @@
 //== Colors
 //
 //## Global color settings.
-$brand-primary:             #ff00ff;  // @override
-$brand-secondary:           #88bbde;
-$gray-darker:            lighten(#000, 13.5%); // #222 @override
-$gray-dark:              lighten(#000, 20%);   // #333 @override
-$gray:                   lighten(#000, 33.5%); // #555 @override
-$gray-light:             lighten(#000, 40%);   // #666 @override
-$gray-lighter:           lighten(#000, 93.5%); // #eee @override
+$brand-primary:          #ff00ff;  // @override
+$brand-secondary:        #88bbde;
+$gray-darker:            lighten(#000, 13.5%); // @override
+$gray-dark:              lighten(#000, 20%);   // @override
+$gray:                   lighten(#000, 33.5%); // @override
+$gray-light:             lighten(#000, 40%);   // @override
+$gray-lighter:           lighten(#000, 93.5%); // @override
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+//** Background color for `<body>`.
+$body-bg:                $gray-lighter;  // @override
+//** Global text color on `<body>`.
+$text-color:             $gray-dark; // @override
+//** Global textual link color.
+$link-color:             $brand-secondary; // @override
+$link-hover-color:       lighten($link-color, 15%); // @override
+$link-hover-decoration:  none; // @override
+
 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
-$font-family-sans-serif:    Arial, sans-serif; // @override
-$text-color:                $gray;  // @override
-$text-inverted-color:       white;
-
-$headings-font-family:      "bmw-type-pro-light", Arial; // @override
+$text-color-inverted:       white;
+$font-family-sans-serif:    "Open Sans", sans-serif, Arial; // @override
+$headings-font-family:      "Helvetica Neue", Helvetica, Arial; // @override
 $headings-font-weight:      300; // @override
 $headings-color:            $brand-secondary; // @override
 
@@ -28,22 +40,24 @@ $font-size-base:          16px; // @override
 $font-size-large:         20px; // @override
 $font-size-small:         12px; // @override
 
-
 //== Buttons
 //
 //## Styles global to buttons.
-$btn-default-color:         white; // @override
-$btn-default-bg:            $text-color; // @override
-$btn-font-weight:           100; // @override
+$btn-default-color:       white; // @override
+$btn-default-bg:          $text-color; // @override
+$btn-font-weight:         100; // @override
 
 
 //== Components
 //
 $sticky-footer-height: 100px;
 
-$border-radius-base:        0; //override
-$border-radius-large:       0; //override
-$border-radius-small:       0; //override
+$padding-base-vertical:     9px; //@override
+$padding-base-horizontal:   18px; //@override
+
+$border-radius-base:        0; //@override
+$border-radius-large:       0; //@override
+$border-radius-small:       0; //@override
 
 //== Grid system
 //
