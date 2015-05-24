@@ -4,12 +4,18 @@ define(function (require) {
 
     // Dependencies
     var app = require('app');
+
+    // Views
     var HomeView = require('view/home/home-view');
+    var UsersListView = require('view/user/users-list-view');
+
+    // View-model/collections
+    var UsersCollection = require('model/user/users-collection'); // returns a singleton instance
 
     var Router = Backbone.Router.extend({
 
         routes: {
-            'users'                        : 'users',
+            'users'                       : 'users',
             'home'                        : 'home',
             ''                            : 'home',
             '*default'                    : 'notFound'
@@ -35,6 +41,10 @@ define(function (require) {
 
         home: function() {
             this.currentView = new HomeView( {el: this.routeContentEl} );
+        },
+
+        users: function() {
+            this.currentView = new UsersListView( {el: this.routeContentEl, collection:UsersCollection} );
         },
 
         notFound: function() {

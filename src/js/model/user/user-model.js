@@ -7,8 +7,6 @@ define(function (require) {
     // Define the 'UsersModel'
     var UsersModel = Backbone.Model.extend({
 
-    	url: ServiceMap.endpoint_a,
-
         initialize: function() {
             
         }

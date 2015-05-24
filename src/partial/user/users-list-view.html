@@ -1,0 +1,33 @@
+<section class="users">
+	<div class="container">
+	
+			<div class="<% data.isLoading ? app.noop : print('hidden') %>">
+				<h1>loading users...</h1>
+			</div>
+
+			<div class="<% data.isLoading ? print('hidden') : app.noop %>">
+		
+				<h1>users</h1>
+
+				<% var usersPerRow = 2; %>
+				<!-- Create a new row for every <%=usersPerRow%> users -->
+				<% _.each(data.users, function (user, index) { %>
+					
+					<% if(index % usersPerRow === 0) { %>
+						<div class="row">
+					<% } %>
+
+							<div class="col-xs-12 col-sm-6">
+								<div data-role="user-view"></div>
+							</div>
+
+					<% if(index % usersPerRow === usersPerRow - 1 || index === data.users.length - 1) { %>
+						</div> <!--End .row -->
+					<% } %>
+				<% }) %>
+
+			</div>
+		
+
+	</div>
+</section>

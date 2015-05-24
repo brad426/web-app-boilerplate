@@ -4,22 +4,19 @@ define(function (require) {
 
     if (app.mode === 'dev') {
         return {
-            users: 'http://jsonplaceholder.typicode.com/users',
-            endpoint_a: 'localhost:3000/api/a'
+            users: 'http://jsonplaceholder.typicode.com/users'
         }
     }
 
     else if (app.mode === 'stag') {
         return {
-            users: 'http://jsonplaceholder.typicode.com/users',
-            endpoint_a: 'http://staging.com/api/a'
+            users: 'YOUR_SERVER/users'
         }
     }
 
     else if (app.mode === 'prod') {
         return {
-             users: 'http://jsonplaceholder.typicode.com/users',
-             endpoint_a: 'http://live.com/api/a'
+             users: 'http://jsonplaceholder.typicode.com/users'
         }
     }
 

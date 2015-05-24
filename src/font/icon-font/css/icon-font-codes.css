@@ -1,4 +1,5 @@
 
+.icon-user:before { content: '\e800'; } /* '' */
 .icon-calendar-inv:before { content: '\e801'; } /* '' */
 .icon-github-circled:before { content: '\e802'; } /* '' */
 .icon-home:before { content: '\e803'; } /* '' */
