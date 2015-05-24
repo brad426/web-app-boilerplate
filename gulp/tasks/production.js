@@ -10,6 +10,6 @@ gulp.task('prod', function(cb) {
   global.destination = 'dist';
   global.compiledScriptsName = 'js-bundle-' + pkg.version + '.min.js'
 
-  runSequence('clean', 'sprite-images', 'styles', ['images', 'requirejs', 'copy'], ['replace-references', 'set-runtime-app-mode'], cb);
+  runSequence('clean', 'styles', ['images', 'requirejs', 'copy'], ['replace-references', 'set-runtime-app-mode'], cb);
 
 });
