@@ -1,3 +1,11 @@
 /**
  * Styles for buttons...
  */
+
+// Remove borders from all buttons
+.btn { border: none; }
+
+.btn-fabulous {
+	// Usage for Bootstrap's button variant mixin: (text-color, background-color, border-color)
+	@include button-variant($text-color-inverted, rgb(255, 104, 179), $gray-lighter); 
+}
