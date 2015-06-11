@@ -24,8 +24,7 @@ define(function (require) {
 
     /**
      * app modes. Typically 'dev', 'stag' or 'prod'
-     * Can be changed during build, by passing in an "mode" flag.
-     * Example: gulp build --mode=stag
+     * Can be changed during build - see the 'set-runtime-app-mode' gulp task
      */
     app.mode = 'dev';
     
