@@ -10,7 +10,7 @@ Get your web app up and running quickly with a [Backbone](http://backbonejs.org/
  * `npm install`
 
 ## Building
-To build the project, first update the version number in `package.json`. and the run:
-`gulp build`
+run:
+`gulp prod`
 
 This will compile and copy all required files into `/dist/`
