@@ -7,9 +7,9 @@ var pkg    		= require('../../package.json');
 gulp.task('prod', function(cb) {
 
   global.appMode = 'prod';
-  global.destination = 'dist';
+  global.destination = 'prod';
   global.compiledScriptsName = 'js-bundle-' + pkg.version + '.min.js'
 
-  runSequence('clean', 'styles', ['images', 'requirejs', 'copy'], ['replace-references', 'set-runtime-app-mode'], cb);
+  runSequence('clean', ['styles', 'html', 'images', 'copy'], ['replace-references', 'set-runtime-app-mode'], cb);
 
 });

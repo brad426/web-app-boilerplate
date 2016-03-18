@@ -12,10 +12,12 @@ gulp.task('copy', function () {
   return gulp.src([
       'src/**/*',
       // Exclude the following:
-      '!src/{js,js/**}', // scripts are handled by require.js task
+      '!src/*.html', // html files are handled by html task
+      '!src/{js,js/**}', // scripts are handled by scripts task
       '!src/{img,img/**}', // handled by image task
       '!src/{scss,scss/**}', // handled by styles task
-      '!src/{partial,partial/**}' // partials not needed in built version
+      '!src/{layout,layout/**}', // we don't need layout
+      '!src/{include,include/**}' // we don't need include
     ])
     .pipe(gulp.dest(global.destination));
 });
