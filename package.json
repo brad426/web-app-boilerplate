@@ -8,9 +8,13 @@
   },
   "author": "YOUR_CONTACT",
   "dependencies": {
-    "bootstrap-sass": "^3.3.4"
+    "backbone": "^1.3.2",
+    "bootstrap-sass": "^3.3.4",
+    "jquery": "^2.2.2",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
+    "browserify": "^13.0.0",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
@@ -20,9 +24,15 @@
     "gulp-nunjucks-html": "^2.0.0",
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.1.0",
-    "gulp-size": "^2.0.0",
     "gulp-uglify": "^1.5.1",
-    "run-sequence": "^1.1.5"
+    "gulp-util": "^3.0.7",
+    "lodash.assign": "^4.0.6",
+    "merge-stream": "^1.0.0",
+    "run-sequence": "^1.1.5",
+    "stringify": "^5.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
   },
   "engines": {
     "node": ">=0.12.0"

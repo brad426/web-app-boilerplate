@@ -1,16 +1,12 @@
-define(function (require) {
+var Backbone = require('backbone');
+var ServiceMap = require('model/service-map');
 
-    "use strict";
+// Define the 'UsersModel'
+var UsersModel = Backbone.Model.extend({
 
-    var ServiceMap = require('model/service-map');
-
-    // Define the 'UsersModel'
-    var UsersModel = Backbone.Model.extend({
-
-        initialize: function() {
-            
-        }
-    });
-
-    return UsersModel;    
+    initialize: function() {
+        
+    }
 });
+
+module.exports = UsersModel;

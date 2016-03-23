@@ -1,26 +1,23 @@
-define(function (require) {
+/**
+ * Don't instantiate with 'new' keyword.
+ * This class returns a single instance of the tracking helper.
+ */
+var TrackingHelper = function() {
+    
+}
 
-    "use strict";
+TrackingHelper.prototype = {
 
-    // Don't instantiate with 'new' keyword. This class returns a single instance of the tracking helper
-    var TrackingHelper = function() {
-        
+    constructor: TrackingHelper,
+
+    trackEvent: function(category, action, label, value) {
+        ga('send', 'event', category, action, label, value);
+    },
+
+    trackVPage: function(name) {
+        name = name.replace(/\!/g, '');
+        ga('send', 'pageview', name + '.html');
     }
+}
 
-    TrackingHelper.prototype = {
-
-        constructor: TrackingHelper,
-
-        trackEvent: function(category, action, label, value) {
-            ga('send', 'event', category, action, label, value);
-        },
-
-        trackVPage: function(name) {
-            name = name.replace(/\!/g, '');
-            ga('send', 'pageview', name + '.html');
-        }
-    }
-
-    return new TrackingHelper();
-
-});
+module.exports = new TrackingHelper();
