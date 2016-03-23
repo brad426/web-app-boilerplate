@@ -2,14 +2,12 @@
 
 var gulp        = require('gulp');
 var runSequence = require('run-sequence');
-var pkg    		= require('../../package.json');
 
 gulp.task('prod', function(cb) {
 
-  global.appMode = 'prod';
+  global.mode = 'prod';
   global.destination = 'prod';
-  global.compiledScriptsName = 'js-bundle-' + pkg.version + '.min.js'
 
-  runSequence('clean', ['styles', 'html', 'images', 'copy'], ['replace-references', 'set-runtime-app-mode'], cb);
+  runSequence('clean', ['styles', 'scripts', 'html', 'images', 'copy'], cb);
 
 });

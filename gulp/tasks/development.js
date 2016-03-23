@@ -5,9 +5,9 @@ var runSequence = require('run-sequence');
 
 gulp.task('dev', function(cb) {
 
-  global.appMode = 'dev';
+  global.mode = 'dev';
   global.destination = 'dev';
-
-  runSequence('clean', ['styles', 'html', 'images', 'copy'], 'watch', cb);
+  
+  runSequence('clean', ['styles', 'scripts', 'html', 'images', 'copy'], 'watch', cb);
 
 });
