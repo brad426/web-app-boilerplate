@@ -5,6 +5,7 @@
  * This class returns a single instance of the AnimationHelper.
  */
 var AnimationHelper = function() {
+    this.cache = {};
 }
 
 AnimationHelper.prototype = {
@@ -15,7 +16,10 @@ AnimationHelper.prototype = {
         el.offsetHeight; // forces repaint
     },
 
-    getTransitionEndEvent: function () {
+    transitionEnd: function () {
+
+        if(this.cache.transitionEnd) return this.cache.transitionEnd;
+
         var t;
         var el = document.createElement('fakeelement');
 
@@ -29,8 +33,9 @@ AnimationHelper.prototype = {
         };
 
         for(t in transitions){
-            if( el.style[t] !== undefined ){
-                return transitions[t];
+            if( el.style[t] !== undefined ) {
+                this.cache.transitionEnd = transitions[t];
+                return this.cache.transitionEnd; 
             }
         }
     }

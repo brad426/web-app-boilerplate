@@ -1,4 +1,6 @@
-var app = require('app');
+// Set up our global app object
+window.app = require('app');
+
 var Router = require('router');
 var AppView = require('view/app/app-view');
 
