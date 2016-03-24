@@ -1,39 +1,39 @@
-define(function (require) {
+"use strict";
 
-    "use strict";
+/**
+ * Don't instantiate with 'new' keyword.
+ * This class returns a single instance of the AnimationHelper.
+ */
+var AnimationHelper = function() {
+}
 
-    // Don't instantiate with 'new' keyword. This class returns a single instance of the AnimationHelpers
-    var AnimationHelpers = function() {
-    }
+AnimationHelper.prototype = {
 
-    AnimationHelpers.prototype = {
+   constructor: AnimationHelper,
 
-       constructor: AnimationHelpers,
+    forcePaint: function ( el ) {
+        el.offsetHeight; // forces repaint
+    },
 
-        forcePaint: function ( el ) {
-            el.offsetHeight; // forces repaint
-        },
+    getTransitionEndEvent: function () {
+        var t;
+        var el = document.createElement('fakeelement');
 
-        getTransitionEndEvent: function () {
-            var t;
-            var el = document.createElement('fakeelement');
+        var transitions = {
+            'transition'       :'transitionend',
+            'Otransitionend'   :'otransitionend',
+            'OTransition'      :'oTransitionEnd',
+            'MSTransition'     :'msTransitionEnd',
+            'MozTransition'    :'transitionend',
+            'WebkitTransition' :'webkitTransitionEnd'
+        };
 
-            var transitions = {
-                'transition'       :'transitionend',
-                'Otransitionend'   :'otransitionend',
-                'OTransition'      :'oTransitionEnd',
-                'MSTransition'     :'msTransitionEnd',
-                'MozTransition'    :'transitionend',
-                'WebkitTransition' :'webkitTransitionEnd'
-            };
-
-            for(t in transitions){
-                if( el.style[t] !== undefined ){
-                    return transitions[t];
-                }
+        for(t in transitions){
+            if( el.style[t] !== undefined ){
+                return transitions[t];
             }
         }
     }
-    
-    return new AnimationHelpers();
-});
+}
+
+module.exports = new AnimationHelper();

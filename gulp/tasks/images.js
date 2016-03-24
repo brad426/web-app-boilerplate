@@ -2,15 +2,13 @@
 
 var gulp     = require('gulp');
 var imagemin = require('gulp-imagemin');
-var size     = require('gulp-size');
+var gulpif   = require('gulp-if');
 
 gulp.task('images', function() {
 
   return gulp.src([
-      'src/img/**/*',
-      '!src/img/{sprite-src,sprite-src/**}'// Exclude sprite source directory
+      'src/img/**/*'
     ])
-    .pipe(imagemin())
-    .pipe(gulp.dest(global.destination + '/img'))
-    .pipe(size({title: 'images'}));
+  	.pipe(gulpif(global.mode === 'prod', imagemin()))
+    .pipe(gulp.dest(global.destination + '/img'));
 });

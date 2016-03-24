@@ -4,13 +4,13 @@ var notify = require('gulp-notify');
 
 module.exports = function(error) {
 
-  if( global.addMode !== 'prod' ) {
+  if( global.mode !== 'prod' ) {
 
     var args = Array.prototype.slice.call(arguments);
 
     // Send error to notification center with gulp-notify
     notify.onError({
-      title: 'Compile Error',
+      title: 'Build Error',
       message: '<%= error.message %>'
     }).apply(this, args);
 

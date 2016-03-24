@@ -1,50 +1,42 @@
-define(function (require) {
+// Polyfills
+require('vendor/request-animation-frame-polyfill');
+require('vendor/console');
 
-    // Polyfills
-    require('vendor/request-animation-frame-polyfill');
-    require('vendor/console');
+var _ = require('underscore');
+var Backbone = require('backbone');
+var TemplateHelper = require('util/template-helper');
+var TrackingHelper = require('util/tracking-helper');
 
-    // Require.js plugins
-    require('vendor/plugin/require/text');
+// Set up our global app object
+window.app = window.app || {};
 
-    // Jquery and its plug-ins
-    require('vendor/jquery.min');
-    require('vendor/plugin/jquery/jquery.placeholder');    
+/**
+ * app modes. Typically 'dev', 'stag' or 'prod'
+ * Can be changed during build - see the 'set-runtime-app-mode' gulp task
+ */
+app.mode = 'dev';
 
-    // Frameworks
-    var _ = require('vendor/underscore.min');
-    var Backbone = require('vendor/backbone.min');
+// Internationalisation and localisation
+app.language = 'en';
 
-    // Helpers
-    var TemplateHelpers = require('util/template-helper');
-    var TrackingHelper = require('util/tracking-helper');
+app.noop = function(){};
 
-    // Set up our global app object
-    window.app = window.app || {};
+// An event dispatcher for global pub/sub events.
+app.ctx = _.extend( {}, Backbone.Events );
 
-    /**
-     * app modes. Typically 'dev', 'stag' or 'prod'
-     * Can be changed during build - see the 'set-runtime-app-mode' gulp task
-     */
-    app.mode = 'dev';
-    
-    // Internationalisation and localisation
-    app.language = 'en';
+/*
+ * Specify a single variable name for data being passed into our underscore templates.
+ * This can significantly improve the speed at which a template is able to render.
+ * See: http://underscorejs.org/#template
+ */
+_.templateSettings.variable = 'data';
 
-    app.noop = function(){};
+// Set up a shortcut to the singleton tracker object
+app.tracker = TrackingHelper;
 
-    // An event dispatcher for global pub/sub events.
-    app.ctx = _.extend( {}, Backbone.Events );
+// Set up a shortcut to template helper functions
+app.tplFns = TemplateHelper;
 
-    /*
-     * Specify a single variable name for data being passed into our underscore templates.
-     * This can significantly improve the speed at which a template is able to render.
-     * See: http://underscorejs.org/#template
-     */
-    _.templateSettings.variable = 'data';
+console.log(app);
 
-    // Set up a shortcut to the singleton tracker object
-    app.tracker = TrackingHelper;
-
-    return window.app;
-});
+module.exports = app;
