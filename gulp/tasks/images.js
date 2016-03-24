@@ -9,6 +9,6 @@ gulp.task('images', function() {
   return gulp.src([
       'src/img/**/*'
     ])
-  	.pipe(gulpif(global.mode === 'prod', imagemin()))
+  	.pipe(gulpif(global.mode !== 'dev', imagemin()))
     .pipe(gulp.dest(global.destination + '/img'));
 });

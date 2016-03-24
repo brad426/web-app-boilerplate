@@ -11,8 +11,8 @@ gulp.task('styles', function () {
   return gulp.src('src/scss/**/*.scss')
     .pipe( sass({
       includePaths:['node_modules/bootstrap-sass/assets/stylesheets'],
-      sourceComments: (global.mode === 'prod') ? false : true,
-      outputStyle: (global.mode === 'prod') ? 'compressed' : 'nested',
+      sourceComments: (global.mode === 'dev') ? true : false,
+      outputStyle: (global.mode === 'dev') ? 'nested': 'compressed',
       errLogToConsole: true
     }))
     .on('error', handleErrors)

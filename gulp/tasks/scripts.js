@@ -30,13 +30,13 @@ gulp.task('scripts', function() {
     };
     var opts = assign({}, watchify.args, customOpts);
 
-    if(global.mode !== 'dev') {
-      b = browserify(opts);
-    }
-    else {
+    if(global.mode === 'dev') {
       b = watchify(browserify(opts));
       b.on('update', bundle); // on any dep update, runs the bundler
       b.on('log', function(msg){gutil.log('Browserify::', msg)}); // output build logs to terminal
+    }
+    else {
+      b = browserify(opts);
     }
 
     // Browserify transformations
