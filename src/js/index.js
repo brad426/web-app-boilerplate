@@ -1,8 +1,6 @@
-// Polyfills
-require('vendor/request-animation-frame-polyfill');
-require('vendor/console');
+// Set up our global app object
+window.app = require('app');
 
-var app = require('app');
 var Router = require('router');
 var AppView = require('view/app/app-view');
 
