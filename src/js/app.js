@@ -1,7 +1,3 @@
-// Polyfills
-require('vendor/request-animation-frame-polyfill');
-require('vendor/console');
-
 var _ = require('underscore');
 var Backbone = require('backbone');
 var TemplateHelper = require('util/template-helper');
