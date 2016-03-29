@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var gulpif   = require('gulp-if');
 var replace = require('gulp-replace');
+var sloc         = require('gulp-sloc');
 var handleErrors = require('../util/handleErrors');
 
 var watchify = require('watchify');
@@ -61,3 +62,9 @@ function bundle() {
     .pipe(gulpif(global.mode !== 'dev', uglify()))
     .pipe(gulp.dest(global.destination + '/js'));
 }
+
+// Outputs SLOC info about our JavaScript
+gulp.task('scripts-sloc', function () {
+  return gulp.src(['src/js/**/*.js', '!src/js/{vendor,vendor/**}'])
+    .pipe( sloc() );
+});

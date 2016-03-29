@@ -2,9 +2,9 @@
 
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
-var handleErrors = require('../util/handleErrors');
 var autoprefixer = require('gulp-autoprefixer');
-
+var sloc         = require('gulp-sloc');
+var handleErrors = require('../util/handleErrors');
 
 gulp.task('styles', function () {
 
@@ -20,4 +20,10 @@ gulp.task('styles', function () {
         browsers: ['last 2 versions', '> 1%', 'ie 9', 'ie 10']
     }))
     .pipe( gulp.dest(global.destination + '/css') );
+});
+
+// Outputs SLOC info about our SCSS
+gulp.task('styles-sloc', function () {
+  return gulp.src(['src/scss/**/*.scss', '!src/scss/{vendor,vendor/**}'])
+    .pipe( sloc() );
 });
