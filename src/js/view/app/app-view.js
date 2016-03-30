@@ -65,8 +65,6 @@ var App = BaseView.extend({
                 // Instruct Backbone to trigger routing events
                 Backbone.history.navigate(url, { trigger: true });
             }
-            
-            return false;
         }
     },
 
