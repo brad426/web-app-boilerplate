@@ -2,10 +2,13 @@
  * Styles for buttons...
  */
 
-// Remove borders from all buttons
-.btn { border: none; }
 
-.btn-fabulous {
+.btn {
+	position: relative;
+	border: none; // Remove borders from all buttons
+}
+
+.btn-pretty {
 	// Usage for Bootstrap's button variant mixin: (text-color, background-color, border-color)
 	@include button-variant($text-color-inverted, rgb(255, 104, 179), $gray-lighter); 
 }
