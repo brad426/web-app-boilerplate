@@ -47,17 +47,24 @@ var App = BaseView.extend({
         // chain 'or's for other black list routes
         var passThrough = href.indexOf('sign_out') >= 0;
 
-        // Allow shift+click for new tabs, etc.
-        if (!passThrough && !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
+        if( ! passThrough ) {
             e.preventDefault();
-            
-            // Remove leading slashes and hash bangs (backward compatibility)
-            var url = href.replace(/^\//,'').replace('\#\!\/','');
-            
-            // Instruct Backbone to trigger routing events
-            Backbone.history.navigate(url, { trigger: true });
 
-            return false;
+            var url = href.replace(/^\//,'').replace('\#\!\/','');
+
+            /**
+             * If we are using hashbang routes and a modifier key (cmd/shift etc) was
+             * used, allow the clicked link to be opened in new window/tab
+             */
+            if(Backbone.history.options.pushState === false && (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey)) {
+                var path = Backbone.history.location.pathname + '#' + url;
+                window.open(path, '_blank');
+            }
+            // Allow Backbone router to handle it
+            else {
+                // Instruct Backbone to trigger routing events
+                Backbone.history.navigate(url, { trigger: true });
+            }
         }
     },
 

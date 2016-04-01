@@ -2,10 +2,23 @@
  * Styles for buttons...
  */
 
-// Remove borders from all buttons
-.btn { border: none; }
 
-.btn-fabulous {
+// Override to bootstrap defaults
+.btn {
+	font-size: 1em;
+	padding: 0.8em 1.8em;
+	border: none;
+
+	&:focus,
+	&:active,
+	&.active {
+	  &:focus {
+	    outline: none;
+	  }
+	}
+}
+
+.btn-pretty {
 	// Usage for Bootstrap's button variant mixin: (text-color, background-color, border-color)
 	@include button-variant($text-color-inverted, rgb(255, 104, 179), $gray-lighter); 
 }

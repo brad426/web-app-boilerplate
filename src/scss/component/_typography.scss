@@ -1,12 +1,50 @@
-/**
- * Declare @font-face styles etc...
- */
+//== Base typographic system
+//
+//## Basic responsive typography via mq + rem + em
+html {
+	font-size: 14px;
+	@media (min-width: $screen-sm) { font-size: 18px; }
+	@media (min-width: $screen-md) { font-size: 22px; }
+	@media (min-width: $screen-lg) { font-size: 26px; }
+}
 
-.text-w-ultra-light { font-weight: 100; }
-.text-w-light { font-weight: 300; }
-.text-w-book { font-weight: 500; }
-.text-w-bold { font-weight: 700; }
-.text-w-black { font-weight: 900; }
+body {
+	-webkit-font-smoothing: antialiased;
+	font-weight: 300;
+	// Smooth the font-size ramping from the root element, so we have a more consistent "body" font size
+	font-size: 1rem; // ~ 14px
+	@media (min-width: $screen-sm) { font-size: 15px; }
+	@media (min-width: $screen-md) { font-size: 16px; }
+	@media (min-width: $screen-lg) { font-size: 17px; }
+}
 
+h1, .h1 { font-size: 2.5rem; }
+h2, .h2 { font-size: 1.8rem; }
+h3, .h3 { font-size: 1.5rem; }
+h4, .h4 { font-size: 1.25rem; }
+h5, .h5 { font-size: 1.15rem; }
+h6, .h6 { font-size: 0.85rem; }
+
+//== Heading defaults
+//
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+p {
+  line-height: $line-height-base;
+  margin-top: 0;
+  margin-bottom: 0.8em / $line-height-base; // 80% of visual size (that's why we divide by line-height) 
+}
+
+hr { margin: 1.5rem 0; }
+
+//== Text weight modifiers
+//
+//## Commonly used font-weight definitions
+.text-light { font-weight: 300; }
+.text-medium { font-weight: 500; }
+.text-heavy { font-weight: 900; }
+
+//== Text utility classes
+//
+//## An assortment of typographic helper classes
 .text-secondary { color: $color-secondary; }
-.no-wrap { white-space: nowrap; }
